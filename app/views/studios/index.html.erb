@@ -4,10 +4,10 @@
 <div class="card-container">
       <% @studios.each do |studio| %>
       <div class="card">
-        <h3><%= studio.name %></h3>
-        <%= studio.address %>
-        <%= studio.price %>
-        <%= studio.description %>
+        <h3><%= studio.name.capitalize %></h3>
+        <h4><%= studio.price %> $</h4>
+        <p><%= studio.address %></p>
+        <p><%= studio.description %></p>
       </div>
       <% end %>
 </div>

@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/4088004/pexels-photo-4088004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 500px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 0px
+}
+
+.main-container {
+  background-color: rgb(255, 255, 255);
+}
+
+.home-phrase {
+  font-size: xx-large;
+  text-decoration: wavy;
+  padding: 40px;
+}
+
+.home-text {
+  text-align: center;
+}

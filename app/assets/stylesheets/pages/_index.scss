@@ -3,12 +3,24 @@
 @import "show";
 
 .card {
-  padding: 16px;
+  padding: 0px;
+  border-radius: 10px;
+  border-style: hidden;
+  background-color: white;
 }
 
 .card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-gap: 16px;
-  padding: 16px;
+  padding: 80px;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+.card-body {
+  background-color: white;
 }

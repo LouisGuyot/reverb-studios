@@ -1,0 +1,50 @@
+.show-title {
+  h1 {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+}
+.image-container {
+  margin: 50px 0;
+}
+.image-show {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.show-title {
+  margin: 50px 0;
+  padding: 16px 0;
+}
+.separation {
+  height: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+  margin-bottom: 24px;
+}
+.text-detail {
+  *{
+    padding: 24px 0;
+  }
+  margin-bottom: 32px;
+}
+.booknow {
+  box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+}
+.bookcard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  margin: 20px 0;
+}
+.map-container {
+  background-color: rgb(200, 200, 200);
+  border-radius: 16px;
+  height: 400px;
+  width: 60%;
+  text-align: center;
+}

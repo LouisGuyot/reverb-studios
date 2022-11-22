@@ -1,4 +1,32 @@
-<h1><%= @studio.name.capitalize %></h1>
-<h3><%= @studio.price %> $</h3>
-<p><%= @studio.address %></p>
-<p><%= @studio.description %></p>
+<div class="container">
+  <div class="show-title">
+    <h1><%= @studio.name.capitalize %></h1>
+    <p><%= @studio.address %></p>
+  </div>
+
+  <div class="image-container">
+    <%= image_tag @studio.photo, class: "image-show" %>
+  </div>
+
+  <div class="separation"></div>
+
+  <div class="row">
+
+    <div class="text-detail col-10">
+      <p><%= @studio.description %></p>
+    </div>
+
+    <div class="booknow col-2 bookcard">
+      <h3><%= @studio.price %> $ per day</h3>
+      <div class="btn btn-secondary">Book now</div>
+    </div>
+
+  </div>
+
+    <div class="separation"></div>
+
+    <div class="map-container">
+      <h2>#TODO MAP</h2>
+    </div>
+
+</div>

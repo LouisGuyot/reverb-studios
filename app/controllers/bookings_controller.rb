@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-   private
+  private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :studio)

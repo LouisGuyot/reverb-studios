@@ -18,7 +18,7 @@
 
     <div class="booknow col-2 bookcard">
       <h3><%= @studio.price %> $ per day</h3>
-      <div class="btn btn-secondary">Book now</div>
+      <div class="btn btn-secondary"> <%= link_to "Book now", "#{@studio.id}/bookings/new" %></div>
     </div>
 
   </div>

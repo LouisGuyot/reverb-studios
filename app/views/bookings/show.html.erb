@@ -1,4 +1,37 @@
-<%= @booking.studio.name %>
-<%= @booking.user.email %>
-<%= @booking.start_date %>
-<%= @booking.end_date %>
+
+
+<div class="container">
+  <div class="show-title">
+    <h1><%= @booking.studio.name.capitalize %></h1>
+    <p><%= @booking.studio.address %></p>
+  </div>
+
+  <div>
+  <h4>You've reserverd this studio from <%= @booking.start_date %> to <%= @booking.end_date %></h4>
+  </div>
+
+  <div class="image-container">
+    <%= image_tag @booking.studio.photo, class: "image-show" %>
+  </div>
+
+  <div class="separation"></div>
+
+  <div class="row">
+
+    <div class="text-detail col-10">
+      <p><%= @booking.studio.description %></p>
+    </div>
+
+    <div class="booknow col-2 bookcard">
+      <h3><%= @booking.studio.price %> $ per day</h3>
+    </div>
+
+  </div>
+
+    <div class="separation"></div>
+
+    <div class="map-container">
+      <h2>#TODO MAP</h2>
+    </div>
+
+</div>

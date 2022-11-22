@@ -1,0 +1,6 @@
+<%= simple_form_for[@studio, @booking] do |f| %>
+<%= f.date :start_date %>
+<%= f.date :end_date %>
+<%= f.input :booking, collection: [:studio] %>
+<%= f.submit %>
+<% end %>

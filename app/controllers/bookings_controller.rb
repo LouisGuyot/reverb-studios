@@ -13,8 +13,15 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save
     redirect_to root_path
+  end
 
+  def index
+    @bookings = policy_scope(Booking)
+  end
 
+  def show
+    @booking = Booking.find(params[:studio_id])
+    authorize @booking
   end
 
    private

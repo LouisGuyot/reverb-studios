@@ -1,0 +1,14 @@
+<h1>Index Page</h1>
+
+
+<div class="card-container">
+      <% @studios.each do |studio| %>
+      <div class="card">
+        <%= image_tag(studio.photo, height: "400", width: "375") %>
+        <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "text-decoration-none" %></h3>
+        <h4><%= studio.price %> $</h4>
+        <p><%= studio.address %></p>
+        <p><%= studio.description %></p>
+      </div>
+      <% end %>
+</div>

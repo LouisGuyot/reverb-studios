@@ -37,8 +37,8 @@
           <%= link_to image_tag(studio.photo, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
           <div class="card-body">
           <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "title-link text-decoration-none" %></h3>
-          <h4 class="card-title"><%= studio.price %> $</h4>
-          <p class="card-text"><%= studio.address %></p>
+          <h4 class="card-text price"><%= studio.price %> $</h4>
+          <p class="card-text address"><%= studio.address %></p>
           </div>
         </div>
         <% end %>

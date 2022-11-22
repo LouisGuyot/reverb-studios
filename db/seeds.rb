@@ -24,7 +24,7 @@ puts 'Creating 30 fake Studios...'
 
 30.times do
   studio = Studio.new(
-    name: "#{Faker::Emotion.adjective } #{Faker::ElectricalComponents.active}",
+    name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.country}",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
     description: Faker::Books::Lovecraft.paragraph(

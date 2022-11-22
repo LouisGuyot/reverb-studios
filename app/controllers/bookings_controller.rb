@@ -6,13 +6,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @studio = Studio.find(params[:studio_id])
     @booking = Booking.new(booking_params)
-    authorize @booking
+    @studio = Studio.find(params[:studio_id])
     @booking.studio = @studio
     @booking.user = current_user
     @booking.save
-    redirect_to root_path
+    authorize @booking
+    redirect_to studio_booking_path(@studio, @booking)
   end
 
   def index
@@ -27,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :studio)
+    params.require(:booking).permit(:start_date, :end_date, :studio_id, :user_id)
   end
 end

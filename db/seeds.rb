@@ -8,8 +8,8 @@
 
 require 'faker'
 
-User.delete_all
-Studio.delete_all
+User.destroy_all
+Studio.destroy_all
 
 puts 'Creating 30 fake users'
 

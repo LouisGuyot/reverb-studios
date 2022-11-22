@@ -1,9 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/studios">
-      <img src="https://images.cooltext.com/5630209.png" alt="Reverb
-Studios" />
-</a>
+    <%= link_to image_tag("https://images.cooltext.com/5630209.png", :alt => "logo", :class => "css", width: 100 ), root_path %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +22,6 @@ Studios" />
             <%= link_to "Log in",  user_session_path, class: "nav-link" %>
           </li>
           <% end %>
-
           <!--li class="nav-item"-->
           <!--/li-->
       </ul>

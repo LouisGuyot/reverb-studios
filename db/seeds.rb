@@ -27,6 +27,7 @@ puts 'Creating 30 fake Studios...'
     name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.country}",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
+    photo: Faker::LoremFlickr.image,
     description: Faker::Books::Lovecraft.paragraph(
       sentence_count: 6,
       random_sentences_to_add: 3

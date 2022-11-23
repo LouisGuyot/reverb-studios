@@ -2,9 +2,27 @@
 <div class="main-container">
   <div class="banner container-fluid">
   </div>
+   <div class="minitext"><h4 class="minitext"><strong><i>Most popular worldwide studio offers</i></strong></h4></div>
+   <div class="card-container">
+        <% @studios.each do |studio| %>
+        <div class="card">
+          <%= link_to image_tag(studio.photo, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
+          <div class="card-body">
+          <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "title-link text-decoration-none" %></h3>
+          <h4 class="card-text price"><%= studio.price %> $</h4>
+          <p class="card-text address"><%= studio.address %></p>
+          </div>
+        </div>
+        <% end %>
+  </div>
   <div class="container home-text"><h1 class="home-phrase"><strong>“Thanks to Reverb-Studios
  I can keep up my passion for music while on the road.”</strong></h1>
  <span>Laura P. (RS user since 2019)</span></div>
+<br>
+<br>
+<br>
+<br>
+<br>
  <div class="container slideshow">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -31,16 +49,10 @@
       </button>
     </div>
   </div>
-  <div class="card-container">
-        <% @studios.each do |studio| %>
-        <div class="card">
-          <%= link_to image_tag(studio.photo, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
-          <div class="card-body">
-          <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "title-link text-decoration-none" %></h3>
-          <h4 class="card-text price"><%= studio.price %> $</h4>
-          <p class="card-text address"><%= studio.address %></p>
-          </div>
-        </div>
-        <% end %>
-  </div>
+  <br>
+<br>
+<br>
+<br>
+<br>
+
 </div>

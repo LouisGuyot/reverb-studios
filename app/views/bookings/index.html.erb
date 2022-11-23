@@ -1,6 +1,15 @@
-<% @bookings.each do |booking| %>
-<p><%= booking.start_date %></p>
-<p><%= booking.end_date %></p>
-<p><%= booking.studio.name %></p>
-<p><%= booking.user.email %></p>
-<% end %>
+<div class="container">
+
+  <h2>Your booking:</h2>
+
+  <% @bookings.each do |booking| %>
+  <div class="booking">
+    <p>Your have book:</p>
+    <p><%= booking.studio.name.capitalize %></p>
+    <p>From: <%= booking.start_date %></p>
+    <p>To: <%= booking.end_date %></p>
+    <p><%= link_to "view details", studio_booking_path(booking.studio, booking)  %></p>
+  </div>
+  <% end %>
+
+</div>

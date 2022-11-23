@@ -16,11 +16,12 @@ class BookingsController < ApplicationController
   end
 
   def index
+    # @studio = Studio.find(params[:studio_id])
     @bookings = policy_scope(Booking)
   end
 
   def show
-    @booking = Booking.find(params[:studio_id])
+    @booking = Booking.find(params[:id])
     authorize @booking
   end
 

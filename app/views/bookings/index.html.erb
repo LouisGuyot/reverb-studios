@@ -9,10 +9,10 @@
     <p>From: <%= booking.start_date %></p>
     <p>To: <%= booking.end_date %></p>
     <p><%= link_to "view details", studio_booking_path(booking.studio, booking)  %></p>
-    <%= link_to "Remove booking",
+    <p><%= link_to "Remove booking",
             studio_booking_path(booking.studio, booking),
             data: {turbo_method: :delete, turbo_confirm: "Delete #{booking.id}?"}
-            %>
+            %></p>
   </div>
   <% end %>
 

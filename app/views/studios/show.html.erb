@@ -1,6 +1,12 @@
 <div class="container">
   <div class="show-title">
-    <h1><%= @studio.name.capitalize %></h1>
+    <div class="d-flex justify-content-between">
+      <h1><%= @studio.name.capitalize %></h1>
+      <p><%= link_to "Remove studio",
+            studio_path(@studio, @booking),
+            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning justify-content-end", style:"float: right"
+            %></p>
+    </div>
     <p><%= @studio.address %></p>
   </div>
 
@@ -18,7 +24,7 @@
 
     <div class="booknow col-2 bookcard">
       <h3><%= @studio.price %> $ per day</h3>
-      <div class="btn btn-secondary"> <%= link_to "Book now", "#{@studio.id}/bookings/new", class:"text-decoration-none text-light" %></div>
+      <div class="btn btn-warning"> <%= link_to "Book now", "#{@studio.id}/bookings/new", class:"text-decoration-none text-light" %></div>
     </div>
 
   </div>
@@ -29,8 +35,5 @@
       <h2>#TODO MAP</h2>
     </div>
 
-<%= link_to "Remove studio",
-            studio_path(@studio, @booking),
-            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning"
-            %>
+
 </div>

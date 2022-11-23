@@ -1,14 +1,49 @@
 class BookingsController < ApplicationController
-
+  before_action :set_studio, only: %i[destroy]
+  before_action :set_booking, only: %i[destroy]
   def new
+    @studio = Studio.find(params[:studio_id])
     @booking = Booking.new
     authorize @booking
   end
 
   def create
-    @booking = Booking.new(params[:booking])
+    @booking = Booking.new(booking_params)
+    @studio = Studio.find(params[:studio_id])
+    @booking.studio = @studio
     @booking.user = current_user
-    authorize @booking
     @booking.save
+    authorize @booking
+    redirect_to studio_booking_path(@studio, @booking)
+  end
+
+  def index
+    # @studio = Studio.find(params[:studio_id])
+    @bookings = policy_scope(Booking)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to studio_bookings_path status: :see_other
+    authorize @booking
+  end
+
+  private
+
+  def set_studio
+    @studio = Studio.find(params[:studio_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :studio_id, :user_id)
   end
 end

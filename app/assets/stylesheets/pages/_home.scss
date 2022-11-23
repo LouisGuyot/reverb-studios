@@ -1,1 +1,44 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/4772169/pexels-photo-4772169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 400px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 0px
+}
+
+.main-container {
+  background-color: rgb(255, 255, 255);
+}
+
+.home-phrase {
+  font-size: xx-large;
+  padding: 40px;
+  font-family: $my-font;
+}
+
+.home-text {
+  text-align: center;
+  padding: 30px;
+  font-family: $my-font;
+}
+
+.carousel .carousel-item {
+  height: 500px;
+}
+
+.title-link {
+  color: black;
+}
+
+.address {
+  opacity: 70%;
+}
+
+.price {
+  font-size:large;
+}

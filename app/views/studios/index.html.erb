@@ -1,14 +1,46 @@
-<h1>Index Page</h1>
 
-
-<div class="card-container">
-      <% @studios.each do |studio| %>
-      <div class="card">
-        <%= image_tag(studio.photo, height: "400", width: "375") %>
-        <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "text-decoration-none" %></h3>
-        <h4><%= studio.price %> $</h4>
-        <p><%= studio.address %></p>
-        <p><%= studio.description %></p>
+<div class="main-container">
+  <div class="banner container-fluid">
+  </div>
+  <div class="container home-text"><h1 class="home-phrase"><strong>“Thanks to Reverb-Studios
+ I can keep up my passion for music while on the road.”</strong></h1>
+ <span>Laura P. (RS user since 2019)</span></div>
+ <div class="container slideshow">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="c-item"><img src="https://images.pexels.com/photos/7087608/pexels-photo-7087608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="..."></div>
+        </div>
+        <div class="carousel-item">
+          <div class="c-item"><img src="https://images.pexels.com/photos/7087163/pexels-photo-7087163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="..."></div>
+        </div>
+        <div class="carousel-item">
+          <div class="c-item"><img src="https://images.pexels.com/photos/7086295/pexels-photo-7086295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="..."></div>
+        </div>
+         <div class="carousel-item">
+          <div class="c-item"><img src="https://images.pexels.com/photos/3774606/pexels-photo-3774606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100" alt="..."></div>
+        </div>
       </div>
-      <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="card-container">
+        <% @studios.each do |studio| %>
+        <div class="card">
+          <%= link_to image_tag(studio.photo, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
+          <div class="card-body">
+          <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "title-link text-decoration-none" %></h3>
+          <h4 class="card-text price"><%= studio.price %> $</h4>
+          <p class="card-text address"><%= studio.address %></p>
+          </div>
+        </div>
+        <% end %>
+  </div>
 </div>

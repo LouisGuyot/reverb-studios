@@ -239,4 +239,4 @@ puts 'Creating 12 fake studios'
 
 
 
-puts 'Finished!'
+puts 'All good!'

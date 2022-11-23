@@ -7,7 +7,10 @@
   </div>
 
   <div>
+  <% duration = @booking.end_date - @booking.start_date %>
+  <% @number_of_days = duration.to_i + 1 %>
   <h4>You've reserverd this studio from <%= @booking.start_date %> to <%= @booking.end_date %></h4>
+  <h4> For a total of <%= @number_of_days %> days.</h4>
   </div>
 
   <div class="image-container">
@@ -23,7 +26,7 @@
     </div>
 
     <div class="booknow col-2 bookcard">
-      <h3><%= @booking.studio.price %> $ per day</h3>
+      <h3><%= @number_of_days * @booking.studio.price %> $</h3>
     </div>
 
   </div>

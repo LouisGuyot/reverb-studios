@@ -37,6 +37,7 @@ class StudiosController < ApplicationController
   def set_studio
     @studio = Studio.find(params[:id])
   end
+
   def studio_params
     params.require(:studio).permit(:name, :address, :photo, :price, :description)
   end

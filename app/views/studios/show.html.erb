@@ -30,7 +30,7 @@
     </div>
 
 <%= link_to "Remove studio",
-            studio_path(@studio),
+            studio_path(@studio, @booking),
             data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning"
             %>
 </div>

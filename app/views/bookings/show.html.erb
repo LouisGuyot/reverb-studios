@@ -9,7 +9,7 @@
   <div>
   <% duration = @booking.end_date - @booking.start_date %>
   <% @number_of_days = duration.to_i + 1 %>
-  <h4>You've reserverd this studio from <%= @booking.start_date %> to <%= @booking.end_date %></h4>
+  <h4>You have successfully reserved this studio from <%= @booking.start_date %> to <%= @booking.end_date %></h4>
   <h4> For a total of <%= @number_of_days %> days.</h4>
   </div>
 

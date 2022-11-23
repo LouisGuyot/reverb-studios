@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: %i[index show create new destroy]
-  before_action :set_booking, only: %i[destroy show]
-  before_action :set_studio, only: %i[destroy]
+
+  before_action :set_studio, only: %i[destroy show]
+  before_action :set_booking, only: %i[destroy]
 
   def new
     @studio = Studio.find(params[:studio_id])
@@ -36,6 +36,7 @@ class BookingsController < ApplicationController
     else
       return
     end
+
   end
 
   private
@@ -43,11 +44,11 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
-
+  
   def set_studio
     @studio = Studio.find(params[:studio_id])
   end
-
+  
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :studio_id, :user_id)
   end

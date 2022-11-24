@@ -24,7 +24,7 @@ louis.save!
 puts 'Creating 12 fake studios'
 
   studio = Studio.new(
-  
+    name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
     description: Faker::Books::Lovecraft.paragraph(
       sentence_count: 6,

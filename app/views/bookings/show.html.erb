@@ -11,8 +11,13 @@
   <h4> For a total of <%= @number_of_days %> days.</h4>
   </div>
 
-  <div class="image-container">
-    <%= image_tag @booking.studio.photo, class: "image-show" %>
+
+    <div class="image-container">
+    <% if @booking.studio.photo.attached? %>
+    <%= cl_image_tag @booking.studio.photo.key, class: "image-show" %>
+    <% else %>
+    "problème image"
+    <% end %>
   </div>
 
   <div class="separation"></div>

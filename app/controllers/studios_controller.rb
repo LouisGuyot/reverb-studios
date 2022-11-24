@@ -29,10 +29,7 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = current_user
     @studio.save
-<<<<<<< HEAD
-=======
     redirect_to studio_path(@studio)
->>>>>>> b1cee8bc62eb225f83954e4dd8dfddbb3189b37d
     authorize @studio
     redirect_to studio_path(@studio)
   end

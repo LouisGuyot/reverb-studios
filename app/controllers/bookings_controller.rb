@@ -23,22 +23,23 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+
   end
 
   def show
     authorize @booking
     @studio = Studio.find(params[:studio_id])
-    @markers =
-    [
-      lat: @studio.latitude,
-      lng: @studio.longitude
-    ]
+      @markers
+      [
+        lat: @studio.latitude,
+        lng: @studio.longitude
+      ]
   end
 
   def destroy
     if current_user.id == @booking.user_id
       @booking.destroy
-      redirect_to studio_bookings_path status: :see_other
+      redirect_to studio_bookings_path notice: "Votre réservation a bien été suprimé"
       authorize @booking
     else
       return

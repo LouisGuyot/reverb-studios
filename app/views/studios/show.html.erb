@@ -14,7 +14,11 @@
   </div>
 
   <div class="image-container">
+    <% if @studio.photo.attached? %>
     <%= cl_image_tag @studio.photo.key, class: "image-show" %>
+    <% else %>
+    "problème image"
+    <% end %>
   </div>
 
   <div class="separation"></div>

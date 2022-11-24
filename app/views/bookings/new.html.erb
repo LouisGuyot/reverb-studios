@@ -1,7 +1,28 @@
-<div class="container">
-  <%= simple_form_for [@studio, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+<div class="container" data-controller="flatpickr">
+  <%= simple_form_for [@studio, @booking],
+    input_html: {
+      data: {
+        controller: 'flatpickr'
+      }
+    } do |f| %>
+  <input data-flatpickr-target="startDateInput" >
+  <%= f.input :start_date,
+    as: :date,
+      input_html: {
+        class: "d-none",
+        data: {
+          flatpickr_target: 'startDateInput',
+        }
+      } %>
+  <input data-flatpickr-target="endDateInput">
+  <%= f.input :end_date,
+    as: :date,
+    input_html: {
+      class: 'd-none',
+      data: {
+        flatpickr_target: 'endDateInput'
+      }
+    } %>
   <%= f.submit %>
   <% end %>
 </div>

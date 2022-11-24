@@ -1,36 +1,82 @@
 <div class="container">
   <div class="show-title">
-    <h1><%= @studio.name.capitalize %></h1>
+    <div class="d-flex justify-content-between">
+      <h1><%= @studio.name.capitalize %></h1>
+
+      <% if user_signed_in? && current_user.id == @studio.user_id %>
+      <p><%= link_to "Remove studio",
+            studio_path(@studio, @booking),
+            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning justify-content-end", style:"float: right"
+            %></p>
+            <% end %>
+    </div>
     <p><%= @studio.address %></p>
   </div>
 
   <div class="image-container">
-    <%= image_tag @studio.photo, class: "image-show" %>
+    <% if @studio.photo.attached? %>
+    <%= cl_image_tag @studio.photo.key, class: "image-show" %>
+    <% else %>
+    "problème image"
+    <% end %>
   </div>
 
   <div class="separation"></div>
 
   <div class="row">
 
-    <div class="text-detail col-10">
+    <div class="text-detail col-9">
       <p><%= @studio.description %></p>
     </div>
 
-    <div class="booknow col-2 bookcard">
-      <h3><%= @studio.price %> $ per day</h3>
-      <div class="btn btn-secondary"> <%= link_to "Book now", "#{@studio.id}/bookings/new", class:"text-decoration-none text-light" %></div>
+    <div class="booknow col-3 bookcard">
+      <h3 class="text-center"><%= @studio.price %> $ per day</h3>
+      <div class="container my-3 form-booking" data-controller="flatpickr">
+        <%= simple_form_for [@studio, @booking],
+          input_html: {
+            data: {
+              controller: 'flatpickr'
+            }
+          } do |f| %>
+        <input data-flatpickr-target="startDateInput" >
+        <%= f.input :start_date,
+          as: :date,
+            input_html: {
+              class: "d-none",
+              data: {
+                flatpickr_target: 'startDateInput',
+              }
+            } %>
+        <input data-flatpickr-target="endDateInput">
+        <%= f.input :end_date,
+          as: :date,
+          input_html: {
+            class: 'd-none',
+            data: {
+              flatpickr_target: 'endDateInput'
+            }
+          } %>
+        <%= f.submit class: "submit"%>
+        <% end %>
+      </div>
+
     </div>
 
   </div>
 
+
+
     <div class="separation"></div>
 
-    <div class="map-container">
-      <h2>#TODO MAP</h2>
+    <% if @studio.geocoded? %>
+    <div class="map-container my-5">
+      <div style="width: 100%; height: 400px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
+    
+    <% end %>
 
-<%= link_to "Remove studio",
-            studio_path(@studio, @booking),
-            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning"
-            %>
 </div>

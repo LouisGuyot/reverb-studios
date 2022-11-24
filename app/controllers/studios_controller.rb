@@ -2,11 +2,22 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show create new destroy]
   before_action :set_studio, only: %i[destroy show]
   def index
-    @studios = policy_scope(Studio)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query OR CAST(price AS TEXT) LIKE :query"
+      @studios = policy_scope(Studio).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @studios = policy_scope(Studio)
+    end
   end
 
   def show
     authorize @studio
+    @booking = Booking.new
+    @markers =
+      [
+        lat: @studio.latitude,
+        lng: @studio.longitude
+      ]
   end
 
   def new
@@ -18,7 +29,7 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = current_user
     @studio.save
-    redirect_to studios_path(@studio)
+    redirect_to studio_path(@studio)
     authorize @studio
   end
 

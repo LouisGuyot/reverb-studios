@@ -1,8 +1,10 @@
-<%= simple_form_for @studio do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photo %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @studio do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

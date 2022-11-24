@@ -2,7 +2,12 @@ class StudiosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show create new destroy]
   before_action :set_studio, only: %i[destroy show]
   def index
-    @studios = policy_scope(Studio)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query OR CAST(price AS TEXT) LIKE :query"
+      @studios = policy_scope(Studio).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @studios = policy_scope(Studio)
+    end
   end
 
   def show

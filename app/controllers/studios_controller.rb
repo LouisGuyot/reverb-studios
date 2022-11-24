@@ -32,6 +32,7 @@ class StudiosController < ApplicationController
     @studio.save
     redirect_to studio_path(@studio)
     authorize @studio
+    redirect_to studio_path(@studio)
   end
 
   def destroy

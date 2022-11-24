@@ -1,11 +1,11 @@
-<div class="container" data-controller="flatpickr">
+<div class="container" data-controller="flatpickr total-price" data-total-price-price-value="<%= @studio.price %>">
   <%= simple_form_for [@studio, @booking],
     input_html: {
       data: {
         controller: 'flatpickr'
       }
     } do |f| %>
-  <input data-flatpickr-target="startDateInput" >
+  <input data-flatpickr-target="startDateInput" data-total-price-target="startDateInput" data-action="input->total-price#calculatePrice">
   <%= f.input :start_date,
     as: :date,
       input_html: {
@@ -14,7 +14,7 @@
           flatpickr_target: 'startDateInput',
         }
       } %>
-  <input data-flatpickr-target="endDateInput">
+  <input data-flatpickr-target="endDateInput" data-total-price-target="endDateInput">
   <%= f.input :end_date,
     as: :date,
     input_html: {
@@ -25,4 +25,11 @@
     } %>
   <%= f.submit %>
   <% end %>
+
+<br>
+<br>
+<div class="d-flex">
+  <div id="total-price"><p>total price in</p></div>
+    <p>$</p>
+  </div>
 </div>

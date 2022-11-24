@@ -38,7 +38,6 @@ class BookingsController < ApplicationController
     else
       return
     end
-
   end
 
   private

@@ -38,28 +38,27 @@
               controller: 'flatpickr'
             }
           } do |f| %>
-        <input data-flatpickr-target="startDateInput" >
+
         <%= f.input :start_date,
-          as: :date,
+          as: :string,
             input_html: {
-              class: "d-none",
+
               data: {
                 flatpickr_target: 'startDateInput',
               }
             } %>
-        <input data-flatpickr-target="endDateInput">
+
         <%= f.input :end_date,
-          as: :date,
+          as: :string,
           input_html: {
-            class: 'd-none',
+
             data: {
-              flatpickr_target: 'endDateInput'
+              flatpickr_target: 'endDateInput',
             }
           } %>
         <%= f.submit class: "submit"%>
         <% end %>
       </div>
-
     </div>
 
   </div>
@@ -76,7 +75,7 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
     </div>
-    
+
     <% end %>
 
 </div>

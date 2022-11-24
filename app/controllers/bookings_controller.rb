@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to studio_booking_path(@studio, @booking), notice: "Votre réservation a bien été enregistrée"
+      redirect_to studio_booking_path(@studio, @booking), notice: "Your studio has been booked"
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   def destroy
     if current_user.id == @booking.user_id
       @booking.destroy
-      redirect_to studio_bookings_path notice: "Votre réservation a bien été suprimé"
+      redirect_to studio_bookings_path notice: "Your booking has been canceled!"
       authorize @booking
     else
       return

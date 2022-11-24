@@ -26,8 +26,8 @@ puts 'Creating 12 fake studios'
 
 
   studio = Studio.new(
-    name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.country}",
+    name: "Studio Blue Lines",
+    address: "9 Rue D'Estienne d'Orves, 92040 Issy-les-Moulineaux, France ",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
     description: Faker::Books::Lovecraft.paragraph(
     sentence_count: 6,
@@ -40,8 +40,8 @@ puts 'Creating 12 fake studios'
   studio.save!
 
   studio = Studio.new(
-    name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.country}",
+    name: "Sear Sound",
+    address: "353 W 48th St, New York, NY 10036, États-Unis",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
     description: Faker::Books::Lovecraft.paragraph(
     sentence_count: 6,

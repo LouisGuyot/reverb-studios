@@ -6,7 +6,7 @@
    <div class="card-container">
         <% @studios.each do |studio| %>
         <div class="card">
-          <%= link_to image_tag(studio.photo, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
+          <%= link_to cl_image_tag(studio.photo.key, height: "90%", width: "90%", class:"card-img-top"), studio_path(studio) %>
           <div class="card-body">
           <h3> <%= link_to studio.name.capitalize, studio_path(studio), class: "title-link text-decoration-none" %></h3>
           <h4 class="card-text price"><%= studio.price %> $</h4>

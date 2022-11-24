@@ -17,7 +17,6 @@ class StudiosController < ApplicationController
         lat: @studio.latitude,
         lng: @studio.longitude
       ]
-
   end
 
   def new

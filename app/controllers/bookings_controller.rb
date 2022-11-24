@@ -23,17 +23,16 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
-
   end
 
   def show
     authorize @booking
     @studio = Studio.find(params[:studio_id])
-      @markers
-      [
-        lat: @studio.latitude,
-        lng: @studio.longitude
-      ]
+    @markers
+    [
+      lat: @studio.latitude,
+      lng: @studio.longitude
+    ]
   end
 
   def destroy

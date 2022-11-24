@@ -28,8 +28,8 @@ class StudiosController < ApplicationController
     @studio = Studio.new(studio_params)
     @studio.user = current_user
     @studio.save
-    redirect_to studios_path(@studio)
     authorize @studio
+    redirect_to studio_path(@studio)
   end
 
   def destroy

@@ -14,7 +14,7 @@
   </div>
 
   <div class="image-container">
-    <%= image_tag @studio.photo, class: "image-show" %>
+    <%= cl_image_tag @studio.photo.key, class: "image-show" %>
   </div>
 
   <div class="separation"></div>

@@ -12,6 +12,12 @@ class StudiosController < ApplicationController
 
   def show
     authorize @studio
+    @markers =
+      [
+        lat: @studio.latitude,
+        lng: @studio.longitude
+      ]
+
   end
 
   def new

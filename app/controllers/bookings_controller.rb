@@ -13,18 +13,26 @@ class BookingsController < ApplicationController
     @studio = Studio.find(params[:studio_id])
     @booking.studio = @studio
     @booking.user = current_user
-    @booking.save
     authorize @booking
-    redirect_to studio_booking_path(@studio, @booking)
+    if @booking.save
+      redirect_to studio_booking_path(@studio, @booking), notice: "Votre réservation a bien été enregistrée"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
-    # @studio = Studio.find(params[:studio_id])
     @bookings = policy_scope(Booking)
   end
 
   def show
     authorize @booking
+    @studio = Studio.find(params[:studio_id])
+    @markers =
+    [
+      lat: @studio.latitude,
+      lng: @studio.longitude
+    ]
   end
 
   def destroy

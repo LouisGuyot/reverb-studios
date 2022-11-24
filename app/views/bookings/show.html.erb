@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="show-title">
     <h1><%= @booking.studio.name.capitalize %></h1>
@@ -33,8 +31,12 @@
 
     <div class="separation"></div>
 
-    <div class="map-container">
-      <h2>#TODO MAP</h2>
+    <div class="map-container my-5">
+      <div style="width: 100%; height: 400px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
     </div>
 
 </div>

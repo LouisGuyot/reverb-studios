@@ -9,6 +9,7 @@
 require "open-uri"
 require 'faker'
 
+Booking.destroy_all
 Studio.destroy_all
 User.destroy_all
 

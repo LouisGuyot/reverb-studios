@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to booking_path(@studio, @booking), notice: "Your studio has been booked"
+      redirect_to booking_path(@booking), notice: "Your studio has been booked"
     else
       render :new, status: :unprocessable_entity
     end

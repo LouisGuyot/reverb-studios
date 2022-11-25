@@ -45,7 +45,7 @@
   background-color: rgb(200, 200, 200);
   border-radius: 16px;
   height: 400px;
-  width: 60%;
+  width: 70%;
   text-align: center;
 }
 .submit {
@@ -56,4 +56,19 @@
 }
 .form-booking {
   padding-left: 50px;
+}
+.bottom-box {
+  display: flex;
+  align-items: center;
+  .vertical-border {
+    border-left: 1px solid rgba(0, 0, 0, 0.164);
+    margin: 50px;
+    height: 400px;
+  }
+  .address {
+    height: 150px;
+  }
+  ul {
+    list-style-type: none;
+  }
 }

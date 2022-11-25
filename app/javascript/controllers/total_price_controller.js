@@ -10,8 +10,12 @@ export default class extends Controller {
 
   calculatePrice() {
 
+    console.log("hi")
     let date2 = new Date(this.endDateInputTarget.value);
     let date1 = new Date(this.startDateInputTarget.value);
+
+    console.log(date1)
+    console.log(date2)
 
     let Difference_In_Time = date2.getTime() - date1.getTime();
 
@@ -20,9 +24,10 @@ export default class extends Controller {
 
     let totalPrice = this.priceValue * Difference_In_Days
 
-    document.getElementById("total-price").innerHTML = totalPrice.toString()
+    document.getElementById("this-stuff").innerHTML = totalPrice.toString()
   }
 
   connect() {
+    console.log(this.startDateInputTarget)
   }
 }

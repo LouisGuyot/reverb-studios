@@ -30,11 +30,12 @@
 
     <div class="booknow col-3 bookcard">
       <h3 class="text-center"><%= @studio.price %> $ per day</h3>
-      <div class="container my-3 form-booking" data-controller="flatpickr">
+      <div class="container my-3 form-booking" data-controller="flatpickr total-price" data-total-price-price-value="<%= @studio.price %>">
         <%= simple_form_for [@studio, @booking],
           input_html: {
             data: {
-              controller: 'flatpickr'
+              controller: 'flatpickr',
+              controller: 'total-price',
             }
           } do |f| %>
 
@@ -44,21 +45,24 @@
 
               data: {
                 flatpickr_target: 'startDateInput',
+                total_price_target: 'startDateInput',
+                action: 'input->total-price#calculatePrice'
               }
             } %>
-
         <%= f.input :end_date,
           as: :string,
           input_html: {
 
             data: {
               flatpickr_target: 'endDateInput',
+              total_price_target: 'endDateInput',
             }
           } %>
+          <p>Total Price in $</p>
           <div class="text-center">
+          <div id="this-stuff" class="text-center">0</div>
         <%= f.submit class: "submit text-center" %></div>
         <% end %>
-
       </div>
     </div>
 

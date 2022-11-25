@@ -22,7 +22,7 @@ export default class extends Controller {
 
     let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
 
-    let totalPrice = this.priceValue * Difference_In_Days
+    let totalPrice = this.priceValue * (Difference_In_Days + 1)
 
     document.getElementById("this-stuff").innerHTML = totalPrice.toString()
   }

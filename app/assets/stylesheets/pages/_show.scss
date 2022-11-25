@@ -45,6 +45,7 @@
   background-color: rgb(200, 200, 200);
   border-radius: 16px;
   height: 400px;
+
   width: 100%;
   text-align: center;
 }
@@ -54,7 +55,24 @@
   border-radius: 4px;
 }
 
+
 .col-3 {
   flex: 0 0 auto;
   width: 24%;
+}
+
+.bottom-box {
+  display: flex;
+  align-items: center;
+  .vertical-border {
+    border-left: 1px solid rgba(0, 0, 0, 0.164);
+    margin: 50px;
+    height: 400px;
+  }
+  .address {
+    height: 150px;
+  }
+  ul {
+    list-style-type: none;
+  }
 }

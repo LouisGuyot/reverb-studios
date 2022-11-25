@@ -28,3 +28,15 @@
 .card-body {
   background-color: white;
 }
+
+.HoverDiv img{
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.HoverDiv img:hover {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}

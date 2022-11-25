@@ -2,11 +2,11 @@
 <div class="main-container">
   <div class="banner container-fluid">
   </div>
-   <div class="minitext"><h4 class="minitextp"><strong><i>Most popular</i></strong></h4><h4 class="minitextp"><strong><i>
+   <div class="minitext"><h4><strong><i>Most popular</i></strong></h4><h4><strong><i>
    worldwide studio offers</i></strong></h4></div>
    <div class="card-container">
         <% @studios.each do |studio| %>
-        <div class="card">
+        <div class="card HoverDiv">
           <%= link_to studio_path(studio) do %>
             <% if studio.photo.present? %>
               <%= cl_image_tag(studio.photo.key, height: "90%", width: "90%", class:"card-img-top") %>

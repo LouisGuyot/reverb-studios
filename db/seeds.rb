@@ -28,8 +28,8 @@ puts 'Creating 12 fake studios'
     name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
     price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
     description: Faker::Books::Lovecraft.paragraph(
-      sentence_count: 6,
-      random_sentences_to_add: 3,
+      sentence_count: 20,
+      random_sentences_to_add: 20,
     ).to_s,
     address: "Villa Juana, Saint-Domingue, République dominicaine",
   )
@@ -46,8 +46,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "13 KN 27 St, Kigali, Rwanda",
 )
@@ -64,8 +64,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "1 Galton Rd, Tijgerhof, Cape Town, 7441, Afrique du Sud",
 )
@@ -82,8 +82,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "Stationsweg 182a, 2515 BS Den Haag, Pays-Bas",
 )
@@ -100,8 +100,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "Rue des Coteaux 160, 1030 Schaerbeek, Belgique",
 )
@@ -118,8 +118,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "Zossener Str. 46, 10961 Berlin, Allemagne",
 )
@@ -136,8 +136,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "R. Ferreira Borges 101, 1350-128 Lisboa, Portugal",
 )
@@ -154,8 +154,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "81 West Rd, Kingston, Jamaïque",
 )
@@ -172,8 +172,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "Carrer de Zamora, 78, 08018 Barcelona, Espagne",
 )
@@ -190,8 +190,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "4 Rue de la Pierre Levée, 75011 Paris, France",
 )
@@ -208,8 +208,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "158 Great Suffolk St, London SE1 1PE, Royaume-Uni",
 )
@@ -226,8 +226,8 @@ studio = Studio.new(
   name: "#{Faker::Emotion.adjective} #{Faker::ElectricalComponents.active}",
   price: "#{rand(1...1000)}#{Faker::Currency.symbol}",
   description: Faker::Books::Lovecraft.paragraph(
-    sentence_count: 6,
-    random_sentences_to_add: 3,
+    sentence_count: 20,
+    random_sentences_to_add: 20,
   ).to_s,
   address: "Shlomo HaMelekh St 1, Tel Aviv-Yafo, Israël",
 )

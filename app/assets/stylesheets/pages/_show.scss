@@ -32,6 +32,7 @@
 .booknow {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  margin-right: 10px;
 
 }
 .bookcard {
@@ -44,7 +45,8 @@
   background-color: rgb(200, 200, 200);
   border-radius: 16px;
   height: 400px;
-  width: 70%;
+  width: 100%;
+
   text-align: center;
 }
 .submit {
@@ -52,6 +54,11 @@
   padding: 10px 30px;
   border-radius: 4px;
 }
+
+
+.col-3 {
+  flex: 0 0 auto;
+  width: 24%;
 
 .form-booking {
   padding-left: 50px;

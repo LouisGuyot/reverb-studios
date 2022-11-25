@@ -32,6 +32,7 @@
 .booknow {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  margin-right: 10px;
 
 }
 .bookcard {
@@ -44,7 +45,8 @@
   background-color: rgb(200, 200, 200);
   border-radius: 16px;
   height: 400px;
-  width: 60%;
+  width: 100%;
+
   text-align: center;
 }
 .submit {
@@ -64,4 +66,27 @@
     border: 1px solid #ced4da;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.col-3 {
+  flex: 0 0 auto;
+  width: 24%;
+}
+
+.form-booking {
+  padding-left: 50px;
+}
+.bottom-box {
+  display: flex;
+  align-items: center;
+  .vertical-border {
+    border-left: 1px solid rgba(0, 0, 0, 0.164);
+    margin: 50px;
+    height: 400px;
+  }
+  .address {
+    height: 150px;
+  }
+  ul {
+    list-style-type: none;
+  }
 }

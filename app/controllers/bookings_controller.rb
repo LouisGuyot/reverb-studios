@@ -36,6 +36,8 @@ class BookingsController < ApplicationController
     ]
   end
 
+# test destroy without id.
+
   def destroy
     if current_user.id == @booking.user_id
       @booking.destroy

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_studio, only: %i[destroy show]
+  # before_action :set_studio, only: %i[ show]
   before_action :set_booking, only: %i[destroy show]
 
   def new
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to studio_booking_path(@studio, @booking), notice: "Your studio has been booked"
+      redirect_to booking_path(@studio, @booking), notice: "Your studio has been booked"
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,11 +23,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
     authorize @booking
-    @studio = Studio.find(params[:studio_id])
+    @studio = @booking.studio
     @markers =
     [
       lat: @studio.latitude,
@@ -39,13 +40,10 @@ class BookingsController < ApplicationController
 # test destroy without id.
 
   def destroy
-    if current_user.id == @booking.user_id
       @booking.destroy
-      redirect_to studio_bookings_path notice: "Your booking has been canceled!"
+      redirect_to bookings_path notice: "Your booking has been canceled!"
       authorize @booking
-    else
-      return
-    end
+
   end
 
   private

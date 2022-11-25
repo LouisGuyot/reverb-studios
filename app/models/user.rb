@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :name, presence: true
   has_many :bookings
+  has_many :studios
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

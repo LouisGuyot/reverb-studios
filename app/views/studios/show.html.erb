@@ -6,7 +6,7 @@
       <% if user_signed_in? && current_user.id == @studio.user_id %>
       <p><%= link_to "Remove studio",
             studio_path(@studio, @booking),
-            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-warning justify-content-end", style:"float: right"
+            data: {turbo_method: :delete, turbo_confirm: "Delete #{@studio}?"}, class:"btn btn-outline-dark justify-content-end", style:"float: right"
             %></p>
             <% end %>
     </div>
@@ -21,11 +21,10 @@
     <% end %>
   </div>
 
-  <div class="separation"></div>
-
   <div class="row">
 
     <div class="text-detail col-9">
+      <h5 class="text-decoration-underline">Description</h5>
       <p><%= @studio.description %></p>
     </div>
 
@@ -56,8 +55,10 @@
               flatpickr_target: 'endDateInput',
             }
           } %>
-        <%= f.submit class: "submit"%>
+          <div class="text-center">
+        <%= f.submit class: "submit text-center" %></div>
         <% end %>
+
       </div>
     </div>
 
